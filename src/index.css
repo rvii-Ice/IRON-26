@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "JetBrains Mono", "Courier New", monospace;
+
+  --color-density-bg: #0b0d0f;
+  --color-density-panel: #15191d;
+  --color-density-border: #2c343c;
+  --color-density-accent: #ffbc00;
+  --color-density-text: #e0e4e8;
+  --color-density-text-dim: #7d8a99;
+}
+
+@layer base {
+  body {
+    @apply bg-density-bg text-density-text font-sans antialiased overflow-hidden;
+    background-image: radial-gradient(var(--color-density-border) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+
+  h1, h2, h3, h4 {
+    @apply tracking-tight;
+  }
+}
+
+.panel {
+  @apply bg-density-panel border border-density-border flex flex-col;
+}
+
+.panel-header {
+  @apply bg-white/5 border-b border-density-border px-3.5 py-2.5 flex items-center gap-2;
+}
+
+.label-pill {
+  @apply text-[9px] px-1.5 py-0.5 bg-density-accent text-density-bg font-bold rounded-[2px] uppercase;
+}
+
+.content-block {
+  @apply p-3.5 flex-1 overflow-hidden;
+}
+
+.port-item {
+  @apply grid grid-cols-[40px_1fr] border-b border-white/5 py-2 items-center;
+}
+
+.port-id {
+  @apply font-mono font-bold text-density-accent text-sm;
+}
+
+.port-desc {
+  @apply text-xs leading-tight;
+}
+
+.port-tag {
+  @apply text-[10px] text-density-text-dim uppercase mt-0.5 block;
+}
+
+.state-node {
+  @apply border border-density-border p-2.5 bg-white/2 relative transition-colors;
+}
+
+.state-node.active {
+  @apply border-density-accent bg-density-accent/5;
+}
+
+.state-node h3 {
+  @apply text-[11px] mb-1 text-density-accent font-bold uppercase;
+}
+
+.state-node p {
+  @apply text-[10px] leading-relaxed text-density-text-dim;
+}
+
+.connector-line {
+  @apply w-[2px] h-3 bg-density-border ml-[15px];
+}
+
+.status-bar-item {
+  @apply flex items-center gap-2 text-[11px] font-mono;
+}
+

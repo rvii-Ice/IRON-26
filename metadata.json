@@ -1,0 +1,6 @@
+{
+  "name": "SFHS IRON Robot Dashboard",
+  "description": "System architecture and physical mapping for the SFHS IRON SPIKE Prime robot build.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}
